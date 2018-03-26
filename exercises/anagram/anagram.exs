@@ -4,5 +4,13 @@ defmodule Anagram do
   """
   @spec match(String.t(), [String.t()]) :: [String.t()]
   def match(base, candidates) do
+    Enum.filter(candidates, fn(cand) -> prepare_string(base) === prepare_string(cand) end)\
   end
+
+  def prepare_string(str) do
+    String.downcase(str) 
+      |> String.graphemes 
+      |> Enum.sort
+  end
+
 end

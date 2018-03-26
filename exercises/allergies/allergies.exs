@@ -20,12 +20,12 @@ defmodule Allergies do
       7 => "cats"
     }
 
-    rem(flags, 256) |>
-    Integer.digits(2) |>
-    Enum.reverse |>
-    Enum.with_index |>
-    Enum.map(fn({a,b}) -> if a !== 0 do allergy_map[b] else  end end) |>
-    Enum.filter(fn(x) -> x != nil end)
+    rem(flags, 256) 
+      |> Integer.digits(2) 
+      |> Enum.reverse 
+      |> Enum.with_index 
+      |> Enum.map(fn({a,b}) -> if a !== 0 do allergy_map[b] end end) 
+      |> Enum.filter(fn(x) -> x != nil end)
   end
 
   
