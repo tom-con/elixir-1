@@ -4,7 +4,7 @@ defmodule BeerSong do
   """
   @spec verse(integer) :: String.t()
   def verse(number) do
-    
+  
     cond do
       is_integer(number) and number > 2 ->
         """
