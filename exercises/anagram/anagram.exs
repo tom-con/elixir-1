@@ -4,7 +4,7 @@ defmodule Anagram do
   """
   @spec match(String.t(), [String.t()]) :: [String.t()]
   def match(base, candidates) do
-    Enum.filter(candidates, fn(cand) -> prepare_string(base) === prepare_string(cand) end)\
+    Enum.filter(candidates, fn(cand) -> String.downcase(base) !== String.downcase(cand) && prepare_string(base) === prepare_string(cand) end)\
   end
 
   def prepare_string(str) do
